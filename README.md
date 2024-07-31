@@ -25,3 +25,29 @@ En la sección de **Browse**, buscar los siguientes paquetes para instalarlos:
 ```
 server=DESKTOP-BQ6T811\\SQLEXPRESS;Database=EmployeesDb;Trusted_connection=true;TrustServerCertificate=true
 ```
+
+## Comandos de CLI
+
+### Version de Dotnet
+
+```
+dotnet --version
+```
+
+### Listar tipos de aplicaciones
+
+```
+dotnet new list
+```
+
+### Crear web api
+
+```
+dotnet new webapi -o nombre
+```
+
+### Correr proyecto de la api en modo watch
+
+```
+dotnet watch run
+```
