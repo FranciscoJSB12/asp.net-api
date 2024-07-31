@@ -4,10 +4,12 @@
 
 Click derecho en **Dependecies**, luego elegir **Manage NuGet Packages**.
 En la sección de **Browse**, buscar los siguientes paquetes para instalarlos:
-`Microsoft.EntityFrameworkCore.SqlServer`
-`Microsoft.EntityFrameworkCore.Tools`
 
-## Migraciones en C#
+1. `Microsoft.EntityFrameworkCore.SqlServer`
+2. `Microsoft.EntityFrameworkCore.Tools`
+3. `Microsoft.EntityFrameworkCore.Design`
+
+## Migraciones en C# con visual estudio
 
 1. Ir a **Tools**, luego **NuGet Package Manager**, finalmente **Package Manager Console**.
 1. Ejecutar: `add-migration "nombre de la migracion"`
@@ -51,3 +53,9 @@ dotnet new webapi -o nombre
 ```
 dotnet watch run
 ```
+
+## Migraciones con la CLI en VSCODE
+
+1. Primero hay que instalar la herramienta `dotnet tool install --global dotnet-ef --version 8.0.0 `
+2. Ejecutar `dotnet ef migrations add init`
+3. Por último `dotnet ef database update`
