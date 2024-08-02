@@ -22,7 +22,7 @@ namespace rest_api_dotnet.Controllers
         }
 
         [HttpGet]
-        public IActionResult GetAllEmployees() 
+        public IActionResult GetAllEmployees()
         {
             var allEmployees = dbContext.Employees.ToList();
 
@@ -30,14 +30,14 @@ namespace rest_api_dotnet.Controllers
         }
 
         [HttpGet]
-        [Route("{id:guid}")] 
+        [Route("{id:guid}")]
         /* This statement says that we will except an identifier inside the curly braces, 
         the name giving in the route attribe should match the name in the parameter of the method*/
-        public IActionResult GetEmployeeById(Guid id) 
+        public IActionResult GetEmployeeById(Guid id)
         {
             var employee = dbContext.Employees.Find(id);
 
-            if(employee is null) 
+            if (employee is null)
             {
                 return NotFound();
             }

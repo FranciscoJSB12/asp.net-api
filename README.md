@@ -9,18 +9,34 @@ En la sección de **Browse**, buscar los siguientes paquetes para instalarlos:
 2. `Microsoft.EntityFrameworkCore.Tools`
 3. `Microsoft.EntityFrameworkCore.Design`
 
+## Paquete y código para realizar join de tablas con SQLServer con .Include
+
+### Paquete a instalar
+
+```
+Microsoft.AspNetCore.Mvc.NewtonsoftJson
+```
+
+### Código a agregar en `Program.cs`
+
+```
+builder.Services.AddControllers().AddNewtonsoftJson(options =>
+{
+    options.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore;
+});
+```
+
 ## Migraciones en C# con visual estudio
 
 1. Ir a **Tools**, luego **NuGet Package Manager**, finalmente **Package Manager Console**.
 1. Ejecutar: `add-migration "nombre de la migracion"`
 1. Correr: `update-database`
 
-## Línea del tiempo
+## Migraciones con la CLI en VSCODE
 
-1. .NET Framework - 2002 > ASP.NET
-2. .NET Core - 2016 > ASP.NET Core
-3. .NET - 2020
-4. Finalmente se quiere que se llame .NET
+1. Primero hay que instalar la herramienta `dotnet tool install --global dotnet-ef --version 8.0.0 `
+2. Ejecutar `dotnet ef migrations add init`
+3. Por último `dotnet ef database update`
 
 ## Cadena de conexión para la base de datos de SQL Server
 
@@ -28,7 +44,7 @@ En la sección de **Browse**, buscar los siguientes paquetes para instalarlos:
 server=DESKTOP-BQ6T811\\SQLEXPRESS;Database=EmployeesDb;Trusted_connection=true;TrustServerCertificate=true
 ```
 
-## Comandos de CLI
+## Comandos CLI
 
 ### Version de Dotnet
 
@@ -54,8 +70,9 @@ dotnet new webapi -o nombre
 dotnet watch run
 ```
 
-## Migraciones con la CLI en VSCODE
+## Línea del tiempo de los nombres de C#
 
-1. Primero hay que instalar la herramienta `dotnet tool install --global dotnet-ef --version 8.0.0 `
-2. Ejecutar `dotnet ef migrations add init`
-3. Por último `dotnet ef database update`
+1. .NET Framework - 2002 > ASP.NET
+2. .NET Core - 2016 > ASP.NET Core
+3. .NET - 2020
+4. Finalmente se quiere que se llame .NET
