@@ -9,7 +9,7 @@ En la sección de **Browse**, buscar los siguientes paquetes para instalarlos:
 2. `Microsoft.EntityFrameworkCore.Tools`
 3. `Microsoft.EntityFrameworkCore.Design`
 
-## Paquete y código para realizar join de tablas con SQLServer con .Include
+## Paquete y código para realizar join de tablas en SQLServer con .Include
 
 ### Paquete a instalar
 
@@ -26,7 +26,13 @@ builder.Services.AddControllers().AddNewtonsoftJson(options =>
 });
 ```
 
-## Migraciones en C# con visual estudio
+## Paquetes para realizar autenticación con JWT
+
+1. `Microsoft.Extensions.Identity.Core`
+2. `Microsoft.AspNetCore.Identity.EntityFrameworkCore`
+3. `Microsoft.AspNetCore.Authentication.JwtBearer`
+
+## Migraciones en C# con Visual Studio
 
 1. Ir a **Tools**, luego **NuGet Package Manager**, finalmente **Package Manager Console**.
 1. Ejecutar: `add-migration "nombre de la migracion"`
