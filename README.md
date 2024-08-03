@@ -50,6 +50,38 @@ builder.Services.AddControllers().AddNewtonsoftJson(options =>
 server=DESKTOP-BQ6T811\\SQLEXPRESS;Database=EmployeesDb;Trusted_connection=true;TrustServerCertificate=true
 ```
 
+## Swagger .NET Core Web API JWT Setup
+
+```
+builder.Services.AddSwaggerGen(option =>
+{
+    option.SwaggerDoc("v1", new OpenApiInfo { Title = "Demo API", Version = "v1" });
+    option.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme
+    {
+        In = ParameterLocation.Header,
+        Description = "Please enter a valid token",
+        Name = "Authorization",
+        Type = SecuritySchemeType.Http,
+        BearerFormat = "JWT",
+        Scheme = "Bearer"
+    });
+    option.AddSecurityRequirement(new OpenApiSecurityRequirement
+    {
+        {
+            new OpenApiSecurityScheme
+            {
+                Reference = new OpenApiReference
+                {
+                    Type=ReferenceType.SecurityScheme,
+                    Id="Bearer"
+                }
+            },
+            new string[]{}
+        }
+    });
+});
+```
+
 ## Comandos CLI
 
 ### Version de Dotnet
